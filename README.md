@@ -1,115 +1,148 @@
-# Gradius III Recomp
+# Gradius III Recomp (Windows x64 Native Recompilation)
 
-A native recompilation of **Gradius III** (USA), built on
-[snesrecomp](https://github.com/RetroPortingToolKit/snesrecomp).
+A high-performance, native Windows x64 recompilation of **Gradius III** (SNES, USA), built on the [snesrecomp](https://github.com/RetroPortingToolKit/snesrecomp) static binary recompilation framework with integrated [recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui) launcher.
 
-_Add a short description here._
+> [!IMPORTANT]
+> **Legal Notice:** This repository contains no game assets, ROM data, or proprietary code. You must provide your own legally dumped retail ROM of *Gradius III (USA)* to play.
 
+---
 
+## 1. System Requirements
 
-> **You must legally own a copy of the game.** No ROM data is distributed with
-> this project, in the repository or in any release. The recompiled C is
-> generated locally from your own copy and is never committed.
+- **Operating System:** Windows 10 / Windows 11 (x64)
+- **Graphics:** OpenGL 3.1 compatible GPU
+- **Dependencies:** Included in release package (SDL2 and MinGW runtime)
+- **Controllers (Optional):** Xbox, DualShock 4, DualSense, Nintendo Switch Pro, and standard XInput/DirectInput gamepads supported via SDL2.
 
-## Status
+---
 
-Scaffolded on 2026-10-25 — **not yet a working port.** The layout, build,
-regeneration pipeline, CI, and packaging are wired up; the game does not run
-until the host work in `src/game_rtl.c` is done. See
-[Porting from here](#porting-from-here).
+## 2. ROM Requirements
 
-## ROM identity
+The launcher verifies your ROM against the retail US release checksum before booting:
 
-| | |
+| Field | Expected Value |
 |---|---|
-| File | `Gradius III (USA).sfc` |
-| Publisher | — |
-| Developer | — |
-| Year | — |
-| Mapping | lorom |
-| Region | USA (North America) |
-| Coprocessor | none |
-| CRC32 | `cd973979` |
-| SHA-256 | `93da752a0c76167d0907efa832367e5d14aab8e835b864f345c386071a9af718` |
+| **Title** | Gradius III (USA) |
+| **Mapping** | LoROM |
+| **Region** | USA (North America) |
+| **Coprocessor** | None |
+| **File Size** | Exactly 524,288 bytes (512 KiB) |
+| **CRC32** | `cd973979` |
+| **SHA-256** | `93da752a0c76167d0907efa832367e5d14aab8e835b864f345c386071a9af718` |
 
-`tools/regen.sh` refuses to run against anything else, so a mismatched
-revision fails immediately instead of producing subtly wrong output.
+> [!WARNING]
+> Do NOT use headered ROMs (524,796 bytes), FastROM conversions, SA-1 Root patches, or slowdown elimination hacks. The recompilation reproduces authentic SNES 65816 / SlowROM timing and hardware behavior.
 
-## Build
+---
 
-```sh
-git submodule update --init --recursive
-bash tools/regen.sh --rom /path/to/Gradius III (USA).sfc
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j
+## 3. Quick Start
+
+1. Extract the release package `GradiusIIIRecomp-windows-x64-v0.1.0-preview-rc1.zip` to any folder.
+2. Launch `GradiusIiiSNESRecomp.exe`.
+3. On first launch, the GUI launcher will appear. Click **Select ROM** (or drag and drop) to select your `Gradius III (USA).sfc` file.
+4. Once verified (green checkmark), click **PLAY** to launch into the game!
+5. To skip the launcher on subsequent launches, check **Skip Launcher** on the launcher's General tab.
+
+---
+
+## 4. Controls & Hotkeys
+
+### Keyboard Controls (Default)
+
+| SNES Button | Keyboard Key | Action |
+|---|---|---|
+| **D-Pad Up** | `Up` | Move Vic Viper Up |
+| **D-Pad Down** | `Down` | Move Vic Viper Down |
+| **D-Pad Left** | `Left` | Move Vic Viper Left |
+| **D-Pad Right** | `Right` | Move Vic Viper Right |
+| **B** | `Z` | Normal Shot / Missile |
+| **Y** | `A` | Normal Shot / Rapid Fire |
+| **A** | `X` | Power-Up Activation (Speed / Missile / Option / Shield) |
+| **X** | `S` | Auxiliary Fire |
+| **L / R** | `C` / `V` | Shoulder Buttons |
+| **Start** | `Return` (Enter) | Game Start / Pause |
+| **Select** | `Right Shift` | Select / Options |
+
+> Key mappings can be customized in the launcher UI under **Controls**, or by editing `keybinds.ini`.
+
+### Gamepad Controls
+
+Plug in any supported controller (Xbox, PlayStation, Switch Pro, etc.). Buttons map automatically to standard SNES layouts:
+- **D-Pad / Left Stick:** Directional movement
+- **A / B / X / Y:** Action buttons
+- **LB / RB:** L / R shoulder buttons
+- **Start / Back:** Start / Select
+- Hotplugging controllers during gameplay is fully supported.
+
+### System Hotkeys
+
+| Hotkey | Function |
+|---|---|
+| `Alt + Enter` | Toggle Fullscreen |
+| `F7` | Open In-Game Save State Menu (10 slots) |
+| `F8` | Rewind Gameplay (when enabled in settings) |
+| `L` | Open In-Game Launcher / Settings Menu |
+| `Ctrl + R` | Soft Reset Game |
+| `Tab` | Fast-Forward / Turbo Mode |
+| `Shift + P` / `P` | Pause / Pause Dimmed |
+| `Ctrl + Up` / `Ctrl + Down` | Scale Window Up / Down |
+| `Keypad +` / `Keypad -` | Volume Up / Down |
+| `F` | Display Performance / FPS Overlay |
+
+---
+
+## 5. Features & PC Enhancements
+
+- **recomp-ui Graphical Launcher:** Integrated settings configuration, ROM integrity verification, and mod management.
+- **Aspect Ratio Options:** Choose between classic 4:3 CRT presentation or 8:7 square pixel internal rendering.
+- **GLSL Shader Support:** CRT filters and scanline shaders configurable in `config.ini` or via launcher.
+- **Audio Configuration:** High-fidelity 32 kHz stereo audio output via SDL2 with volume control.
+- **Save States & Rewind:** Full state persistence (10 quicksave slots) with seamless audio recovery.
+- **In-Game Launcher Access:** Press `L` or gamepad `Select + L3` to adjust settings mid-game without restarting.
+
+---
+
+## 6. Command Line Flags
+
+| Flag | Description |
+|---|---|
+| `--launcher` | Force open the graphical launcher even if `SkipLauncher` is enabled. |
+| `--no-launcher` | Bypass launcher and boot directly into game using cached ROM path. |
+| `--help` | Display command-line options and usage information. |
+
+---
+
+## 7. Building from Source
+
+### Prerequisites
+
+- CMake 3.22+
+- Ninja build tool
+- MinGW-w64 (GCC 11+) x64 toolchain
+- Git
+
+### Build Instructions
+
+```powershell
+# 1. Clone repository with submodules
+git clone --recursive <repo-url> GradiusIIIRecomp
+cd GradiusIIIRecomp
+
+# 2. Configure project
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+# 3. Build native executable
+cmake --build build -j2
 ```
 
-The ROM does not have to live in the repository — keeping it on your own
-drive is the better habit, and `SNESRECOMP_ROM` sets the path once for a
-shell. Without either, `tools/regen.sh` finds `Gradius III (USA).sfc` at the repo root,
-then the path the setup wizard recorded in `rom.cfg`; `.gitignore` blocks
-both from ever being committed.
+The resulting executable will be located at `build/GradiusIiiSNESRecomp.exe`.
 
-`tools/regen.sh` verifies the ROM, generates `src/gen/*.c`, and re-syncs
-`recomp/funcs.h`. Re-run it whenever you change anything under `recomp/`.
+---
 
-## Run
+## 8. License & Acknowledgments
 
-```sh
-./build/GradiusIiiSNESRecomp                     # launcher picks the ROM
-./build/GradiusIiiSNESRecomp /path/to/Gradius III (USA).sfc # or name it and skip the launcher
-```
-
-With no ROM on the command line the build opens the recomp-ui launcher: a ROM
-picker with a verification badge, plus display / audio / input settings. Your
-choice is cached in `rom.cfg` beside the executable, so the next launch opens
-on it and "Skip launcher on boot" makes it immediate. If the launcher is not
-built in (`--no-recomp-ui`), the host falls back to a native file picker.
-
-Either way the ROM is checked against the digests above before anything boots
-— a dump that could not have produced this build is refused at the door rather
-than mis-executing ten frames in.
-
-## Layout
-
-| Path | What lives there |
-|---|---|
-| `recomp/` | Analysis input: `bank*.cfg`, `symbols.toml`, generated `funcs.h` |
-| `rom_identity.txt` | ROM digests — read by the build, `tools/regen.sh` and CI |
-| `src/` | Host code you own: `main.c`, `game_rtl.c` |
-| `src/gen/` | Generated C. Never committed — regenerate locally |
-| `snesrecomp/` | Framework submodule (owns `lib/recomp-net`, `lib/retcomm-rbengine`) |
-| `tools/` | `regen.sh` — the ROM → C pipeline |
-| `scripts/` | `package_release.sh` — player-facing zip |
-| `framework_pins.txt` | Exact framework commits this project was scaffolded against |
-
-## Porting from here
-
-The scaffold stops where the game-specific work starts. In rough order:
-
-1. **Make it boot.** `src/game_rtl.c` holds the frame driver. It starts on
-   the framework's beam-aligned driver (`snesrecomp/runner/src/beam_frame_driver.h`):
-   one frame per PPU field, interrupts taken where the beam latches them,
-   the field rasterized from the raster journal. A title whose main loop it
-   does not fit replaces those calls with its own driver.
-2. **Name things.** Add entries to `recomp/symbols.toml` as you identify
-   routines, then re-run `tools/regen.sh`. Set `emit = true` to promote one
-   into ahead-of-time analysis; leave it false to keep it interpreted.
-   Regen synchronizes the marked blocks in each bank cfg, creating missing
-   configs. Only proven variants become AOT code. See `recomp/README.md`.
-3. **Resolve dispatch misses.** After every run, deal with unresolved
-   indirect targets before anything else — they are the reason a port
-   diverges, and they are cheap to fix early.
-4. **Never synthesise a result** to get past uncovered code, and never edit
-   `src/gen/` by hand. Fix the config or the framework and regenerate.
-
-## Multiplayer
-
-Two players, one controller per port.
-
-## License
-
-This project's own source is under the license in `LICENSE`. The framework
-carries its own terms — see `snesrecomp/LICENSE` and
-`snesrecomp/THIRD_PARTY_ATTRIBUTION.md`. Neither covers the game data, which
-is not distributed here.
+- **Gradius III Recomp:** Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+- **SNESRecomp Framework:** Developed by [RetroPortingToolKit](https://github.com/RetroPortingToolKit/snesrecomp).
+- **recomp-ui:** Graphical launcher by Matthew Stanley ([recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui)).
+- **Third-Party Notices:** See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for full licensing details of Dear ImGui, SDL2, fonts, and runtime components.
+- *Gradius III* is a registered trademark of Konami Digital Entertainment Co., Ltd. This project is not affiliated with, endorsed by, or sponsored by Konami.

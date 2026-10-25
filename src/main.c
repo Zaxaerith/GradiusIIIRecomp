@@ -43,19 +43,26 @@
 #endif
 
 static const SnesDesktopHostGame kGameHost = {
-    .display_name        = "Gradius III",
-    .window_title        = "Gradius III",
-    .region              = SNESRECOMP_ROM_REGION,
-    .rom_file            = SNESRECOMP_ROM_FILE,
-    .expected_sha256_hex = SNESRECOMP_ROM_EXPECTED_SHA256,
-    .expected_crc32_hex  = SNESRECOMP_ROM_EXPECTED_CRC32,
-    .game_id             = SNESRECOMP_ROM_GAME_ID,
-    .build_version       = SNES_GAME_VERSION,
-    .game_info           = &kGameInfo,
-    .num_players         = 2,
+    .display_name             = "Gradius III",
+    .window_title             = "Gradius III",
+    .launcher_title           = "Gradius III — Launcher",
+    .region                   = SNESRECOMP_ROM_REGION,
+    .rom_file                 = SNESRECOMP_ROM_FILE,
+    .expected_sha256_hex      = SNESRECOMP_ROM_EXPECTED_SHA256,
+    .expected_crc32_hex       = SNESRECOMP_ROM_EXPECTED_CRC32,
+    .game_id                  = SNESRECOMP_ROM_GAME_ID,
+    .build_version            = SNES_GAME_VERSION,
+    .game_info                = &kGameInfo,
+    .num_players              = 2,
     /* Battery-backed SRAM shows the launcher's SAVES panel. Leave NULL for a
      * title without one. The path is exe-relative. */
-    .sram_path           = NULL,
+    .sram_path                = NULL,
+    .display_aspect_supported = 1,
+    .shader_supported         = 1,
+    .rewind_settings          = 1,
+    .state_menu_hotkeys       = 1,
+    .in_game_launcher         = 1,
+    .rom_help                 = "Requires an unmodified retail ROM of Gradius III (USA) (512 KB, .sfc).",
 };
 
 #ifndef __ANDROID__
