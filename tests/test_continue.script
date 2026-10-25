@@ -1,0 +1,1153 @@
+# Gradius III Continue Screen Test
+wait 550
+press start 5
+wait 60
+press start 5
+wait 150
+press a 5
+wait 60
+press a 5
+wait 60
+press a 5
+wait 90
+wait 300
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+press b+y 4
+wait 2
+wait 60
+dump 01_continue_screen
+press start 5
+wait 120
+dump 02_after_continue
+wait 240
+dump 03_respawned_stage1
+quit

@@ -1,0 +1,50 @@
+# Gradius III M2 Test: Pause/Resume and Crash Death/Respawn
+wait 550
+dump 00_title
+
+# Press START to go to Mode Select
+press start 5
+wait 60
+
+# Press START to enter Weapon Select
+press start 5
+wait 150
+
+# Press A to select TYPE A and confirm
+press a 5
+wait 60
+press a 5
+wait 60
+press a 5
+wait 90
+
+# Enter Stage 1
+wait 300
+dump 01_stage1_active
+
+# 1. Test Pause
+wait 60
+dump 02_before_pause
+press start 5
+wait 60
+dump 03_paused_a
+wait 60
+dump 04_paused_b
+
+# 2. Test Resume
+press start 5
+wait 60
+dump 05_resumed
+
+# 3. Test Crash / Death: hold DOWN to fly into bottom sand
+press down 60
+wait 60
+dump 06_crashing
+wait 90
+dump 07_death_explosion
+wait 150
+dump 08_respawning
+wait 150
+dump 09_in_flight_again
+
+quit
