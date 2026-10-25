@@ -1,0 +1,26 @@
+# ROM identity for Gradius III — the single source of truth.
+#
+# Read by three consumers, so a revision change is made once, here:
+#   - the build   (CMake generates snesrecomp_rom_identity.h from this file)
+#   - tools/regen.sh
+#   - .github/workflows/release.yml
+#
+# Format is `key = value`, one per line; `#` starts a comment. Values may be
+# quoted. Leaving a digest empty means the build cannot verify a ROM it is
+# handed — it will say so rather than accept it.
+
+display_name    = Gradius III
+rom_file        = Gradius III (USA).sfc
+# Every digest of the bare image (copier header stripped), so the Retro
+# catalog can take a submission's identity from this file rather than ask
+# the submitter to hash the ROM again. The build verifies on crc32/sha256.
+expected_crc32  = cd973979
+expected_md5    = ea30c4f341f6b7a6e290699460ba6c51
+expected_sha1   = 7e62203a4198e9404eb7b076802c09786e5a63f4
+expected_sha256 = 93da752a0c76167d0907efa832367e5d14aab8e835b864f345c386071a9af718
+rom_size        = 524288
+mapping         = lorom
+region          = USA
+# What a mod package's [[target]] game_id must name to apply to this title
+# (snesrecomp/docs/MOD_PACKAGES.md). Stable across revisions on purpose.
+game_id         = gradiusiii-usa
