@@ -34,6 +34,7 @@
 
 #include "game_rtl.h"
 
+#include <stdio.h>
 #include "beam_frame_driver.h"
 
 void GameRunOneFrame(void)

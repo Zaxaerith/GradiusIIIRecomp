@@ -1,0 +1,8 @@
+# Gradius III Title Probe Script
+wait 350
+dump title_350
+wait 50
+dump title_400
+wait 100
+dump title_500
+quit

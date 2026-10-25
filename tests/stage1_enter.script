@@ -1,0 +1,48 @@
+# Gradius III Enter Stage 1 via Weapon Select Button A
+wait 550
+dump 01_title
+
+# Press START to go to Mode Select
+press start 5
+wait 60
+
+# Press START to enter Weapon Select
+press start 5
+wait 150
+dump 02_weapon_select
+
+# Press A to select TYPE A
+press a 5
+wait 60
+dump 03_type_selected
+
+# Press A to confirm selection
+press a 5
+wait 60
+dump 04_weapon_confirm
+
+# Additional A pulse in case shield selection is required
+press a 5
+wait 90
+dump 05_after_confirm
+
+# Wait for Stage 1 load and launch sequence (fade out + fade in)
+wait 300
+dump 06_stage1_start
+
+# In Stage 1 gameplay
+wait 300
+dump 07_stage1_mid
+
+# Action: move Right, Up, Down, and shoot (Button B)
+press right+b 30
+wait 15
+press right+b 30
+wait 15
+press up+b 30
+wait 15
+press down+b 30
+wait 60
+dump 08_stage1_action
+
+quit

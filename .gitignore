@@ -12,6 +12,17 @@
 /build-*/
 /dist/
 /saves/
+/.temp/
+*.bmp
+*.fb.bmp
+*.fb.bgrx
+*.apu.tsv
+*.dma.tsv
+*.ppuw.tsv
+*.oam.bin
+*.cgram.bin
+*.vram.bin
+*.wram.bin
 
 # Local probe output that names paths on one machine
 /rom_probe.json

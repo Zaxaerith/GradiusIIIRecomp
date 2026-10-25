@@ -55,7 +55,7 @@ static const SnesDesktopHostGame kGameHost = {
     .num_players         = 2,
     /* Battery-backed SRAM shows the launcher's SAVES panel. Leave NULL for a
      * title without one. The path is exe-relative. */
-    .sram_path           = "saves/save.srm",
+    .sram_path           = NULL,
 };
 
 #ifndef __ANDROID__
