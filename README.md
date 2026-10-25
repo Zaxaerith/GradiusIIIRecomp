@@ -1,9 +1,13 @@
 # Gradius III Recomp (Windows x64 Native Recompilation)
 
-A high-performance, native Windows x64 static binary recompilation of **Gradius III** (SNES, USA), built on the [snesrecomp](https://github.com/RetroPortingToolKit/snesrecomp) static binary recompilation framework with an integrated [recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui) launcher.
+A high-performance, native Windows x64 static binary recompilation of **Gradius III** (SNES, USA), built on the [snesrecomp](https://github.com/RetroPortingToolKit/snesrecomp) framework with an integrated [recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui) launcher.
 
 > [!IMPORTANT]
-> **Unofficial Project & Legal Notice:** This is an unofficial community research and preservation project. It is not affiliated with, endorsed by, or sponsored by Konami Digital Entertainment Co., Ltd. This repository and its releases contain **no copyrighted game assets, ROM data, or proprietary code**. You must provide your own legally dumped retail cartridge ROM of *Gradius III (USA)* to play.
+> **Legal Notice & Attribution Disclaimer:**
+> - This is an independent community static binary recompilation project.
+> - This project is **not** authorized, licensed, endorsed, or affiliated with Konami Digital Entertainment Co., Ltd.
+> - *Gradius III* is a registered trademark and copyright of Konami Digital Entertainment Co., Ltd.
+> - This repository and its releases contain **no copyrighted game assets, ROM data, or proprietary code**. You must provide your own legally dumped retail cartridge ROM of *Gradius III (USA)* to play or build.
 
 ---
 
@@ -36,14 +40,14 @@ The launcher verifies your ROM against the retail US release checksum before boo
 
 ---
 
-## 3. Quick Start
+## 3. Quick Start (Precompiled Release)
 
-1. Extract `GradiusIIIRecomp-windows-x64-v0.1.0-preview.zip` into any folder.
-2. Run `GradiusIiiSNESRecomp.exe`.
-3. On first launch, the GUI launcher will open automatically.
-4. Click **Select ROM** (or drag and drop) to select your clean `Gradius III (USA).sfc` file.
-5. Once verified (indicated by a green checkmark), click **PLAY** to launch the game.
-6. To bypass the launcher on subsequent launches, check **Skip Launcher** on the launcher's General tab.
+1. Download and extract `GradiusIIIRecomp-windows-x64-v0.1.0-preview.zip`.
+2. Launch `GradiusIiiSNESRecomp.exe`.
+3. On first launch, the GUI launcher opens automatically.
+4. Click **Select ROM** (or drag and drop) to select your clean, retail `Gradius III (USA).sfc` file.
+5. Once verified (indicated by a green checkmark), click **PLAY** to launch into the game.
+6. To bypass the launcher on subsequent launches, check **Skip Launcher** on the launcher's General tab (you can re-open it at any time with the `--launcher` command-line flag or by pressing `L` in-game).
 
 ---
 
@@ -95,9 +99,9 @@ Plug in any supported controller (Xbox, PlayStation, Switch Pro, etc.). Buttons 
 
 ## 5. Audio, Video & PC Enhancements
 
-- **recomp-ui Graphical Launcher:** Integrated configuration panel, ROM integrity verification, and mod management.
+- **recomp-ui Graphical Launcher:** Integrated configuration panel, ROM integrity verification, and mod directory management.
 - **Aspect Ratio Options:** Choose between classic 4:3 CRT presentation or 8:7 square-pixel internal rendering.
-- **GLSL Shader Support:** CRT filters and scanline shaders configurable in `config.ini` or via launcher.
+- **GLSL Shader Support:** CRT filters and scanline shaders configurable in `config.ini` or via the launcher.
 - **Audio Configuration:** High-fidelity 32 kHz stereo audio output via SDL2 with volume control.
 - **Save States & Rewind:** Full state persistence (10 quicksave slots) with seamless audio recovery.
 - **In-Game Launcher Access:** Press `L` or gamepad `Select + L3` to adjust settings mid-game without restarting.
@@ -114,7 +118,7 @@ Gradius III on the Super Nintendo is widely known for intensive sprite and bulle
 
 During screen transitions (title screen, weapon selection, stage transitions, continue screen, and checkpoint respawns), Gradius III executes a specialized VBlank handshake routine at `$00:86CD`. 
 
-To integrate smoothly with SNESRecomp's beam-aligned PPU rasterizer without deadlock, a High-Level Emulation (HLE) stub `HleWaitVBlank` is provided in [`src/gen_stubs.c`](src/gen_stubs.c) and registered in [`recomp/bank00.cfg`](recomp/bank00.cfg). This stub safely updates screen brightness, resets DMA channels (`$420B`/`$420C`), manages NMI flags, and cleans up the stack, ensuring 100% stable transitions throughout the entire game.
+To integrate smoothly with SNESRecomp's beam-aligned PPU rasterizer without deadlock, a High-Level Emulation (HLE) stub `HleWaitVBlank` is provided in [`src/gen_stubs.c`](src/gen_stubs.c) and registered in [`recomp/bank00.cfg`](recomp/bank00.cfg). This stub safely updates screen brightness, resets DMA channels (`$420B`/`$420C`), manages NMI flags, and cleans up the stack, ensuring stable transitions throughout the entire game.
 
 ---
 
@@ -134,31 +138,55 @@ To integrate smoothly with SNESRecomp's beam-aligned PPU rasterizer without dead
 
 - CMake 3.22+
 - Ninja build tool
-- MinGW-w64 (GCC 11+) x64 toolchain
-- Git
+- MinGW-w64 (GCC 11+) x64 toolchain (or Clang)
+- Python 3.9+
+- Git and Bash (e.g. Git Bash on Windows)
 
-### Build Instructions
+> [!IMPORTANT]
+> **AOT Code Generation Requirement:**  
+> The ahead-of-time (AOT) recompiled C code in `src/gen/` is directly derived from ROM machine code and is **never committed to the repository**. Before building a playable executable, you must regenerate `src/gen/` locally from your own legally owned ROM.
 
-```powershell
+### Build Path A: Playable Native Game (Standard Build)
+
+To build the complete native game with all 65816 routines compiled into native machine code:
+
+```bash
 # 1. Clone repository with submodules
 git clone --recursive https://github.com/Zaxaerith/GradiusIIIRecomp.git
 cd GradiusIIIRecomp
 
-# 2. Configure project
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+# 2. Generate AOT C code from your legal Gradius III (USA) ROM
+# This executes SNESRecomp's static analyzer against recomp/bank00.cfg and populates src/gen/
+bash tools/regen.sh --rom "/path/to/Gradius III (USA).sfc"
 
-# 3. Build native executable
+# 3. Configure and compile the native executable
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j2
 ```
 
-The resulting executable will be located at `build/GradiusIiiSNESRecomp.exe`.
+The resulting playable executable will be located at `build/GradiusIiiSNESRecomp.exe`.
+
+### Build Path B: Setup Host Stub (`-DSNESRECOMP_SETUP_HOST=ON`)
+
+If you wish to compile only the lightweight launcher host without pre-generating `src/gen/`, enable `SNESRECOMP_SETUP_HOST`:
+
+```bash
+cmake -S . -B build-host -G Ninja -DCMAKE_BUILD_TYPE=Release -DSNESRECOMP_SETUP_HOST=ON
+cmake --build build-host -j2
+```
+
+The resulting `build-host/GradiusIiiSNESRecomp.exe` contains the GUI launcher and the "Generate & Rebuild" wizard, allowing the end user to supply their ROM and trigger local code compilation through the interface.
 
 ---
 
-## 10. License & Acknowledgments
+## 10. License & Attributions
 
-- **Gradius III Recomp:** Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
-- **SNESRecomp Framework:** Developed by [RetroPortingToolKit](https://github.com/RetroPortingToolKit/snesrecomp).
-- **recomp-ui:** Graphical launcher by Matthew Stanley ([recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui)).
-- **Third-Party Notices:** See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for full licensing details of Dear ImGui, SDL2, fonts, and runtime components.
-- *Gradius III* is a registered trademark of Konami Digital Entertainment Co., Ltd. This project is an independent clean-room recompilation and is not affiliated with, endorsed by, or sponsored by Konami.
+- **Gradius III Recomp (Project Source):** Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+- **SNESRecomp Framework:** Developed by [RetroPortingToolKit](https://github.com/RetroPortingToolKit/snesrecomp) (PolyForm Noncommercial 1.0.0 / MIT). Copyright (c) 2026 Matthew Stanley and framework contributors.
+- **recomp-ui:** Graphical launcher by Matthew Stanley ([recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui)). Copyright (c) 2026 Matthew Stanley (MIT License).
+- **Dear ImGui:** Copyright (c) 2014-2026 Omar Cornut (MIT License).
+- **SDL2:** Copyright (c) 1997-2026 Sam Lantinga (zlib License).
+- **MinGW-w64 Runtime:** Copyright (c) 2009-2026 MinGW-w64 project (ZPL / BSD-3 / GCC Runtime Exception).
+- **Game-Specific Port Modifications & Glue Code:** Copyright (c) 2026 Gradius III Recomp contributors / Zaxaerith (PolyForm Noncommercial 1.0.0).
+- **Third-Party Notices:** Full legal notices and licenses for fonts and third-party libraries are detailed in [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
+- *Gradius III* is a registered trademark and copyright of Konami Digital Entertainment Co., Ltd. This project is an independent community preservation effort and is not authorized, endorsed, sponsored, or affiliated with Konami.
